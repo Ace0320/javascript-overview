@@ -6,21 +6,28 @@ const inputElement1 = document.querySelector("#first");
 const inputElement2 = document.querySelector("#second");
 const btnElement = document.getElementById("calcButton");
 const ansElement = document.getElementById("answer");
+const coordGet = document.getElementById("getCoords");
+const mouseCoord = document.getElementById("mousePosition");
 
 console.log('INFO: Configuring event handlers');
 
-inputElement1.onclick = function () {
-  alert("thanks for clicking input 1!");
-};
+// inputElement1.onclick = function () {
+//   alert("thanks for clicking input 1!");
+// };
 
-inputElement2.ondblclick = () => {
-  alert("thanks for double clicking input 2!");
-};
+// inputElement2.ondblclick = () => {
+//   alert("thanks for double clicking input 2!");
+// };
 
-/* inputElement2.addEventListener("mouseover", () => {
-  alert("thanks for mousing over input 2!");
-});*/
-
+//  inputElement2.addEventListener("mouseover", () => {
+//   alert("thanks for mousing over input 2!");
+// });
+coordGet.addEventListener("mouseover", () => {
+  let x = event.clientX;
+  let y = event.clientY;
+  let coords = "X coords: " + x + ", Y coords: " + y;
+  mouseCoord.innerHTML = coords;
+});
 
 btnElement.onclick = async function () {
   const text1 = inputElement1.value;  // values are text! 
